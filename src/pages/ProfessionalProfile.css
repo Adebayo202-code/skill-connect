@@ -1,0 +1,265 @@
+.professional-profile {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 50px 8%;
+}
+
+.profile-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.profile-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.profile-image {
+  position: relative;
+  height: 430px;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-image span {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: #ffffff;
+  color: #16a34a;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile-image span i {
+  margin-right: 6px;
+}
+
+.profile-info {
+  padding: 50px;
+}
+
+.profile-skill {
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.profile-info h1 {
+  font-size: 40px;
+  margin: 0 0 20px;
+  color: #111827;
+}
+
+.profile-details {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.profile-details span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #4b5563;
+}
+
+.profile-details i {
+  color: #f59e0b;
+}
+
+.profile-details span:nth-child(2) i,
+.profile-details span:nth-child(3) i {
+  color: #2563eb;
+}
+
+.profile-about {
+  color: #6b7280;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.contact-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-services {
+  background: #ffffff;
+  margin-top: 30px;
+  padding: 35px;
+  border-radius: 20px;
+}
+
+.profile-services h2 {
+  margin-bottom: 25px;
+  color: #111827;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.service-item {
+  padding: 18px;
+  background: #f8fafc;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.service-item i {
+  color: #16a34a;
+}
+
+.profile-not-found {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.profile-not-found a {
+  color: #2563eb;
+  text-decoration: none;
+
+}
+.booking-section {
+  background: #ffffff;
+  margin-top: 30px;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.booking-header {
+  margin-bottom: 30px;
+}
+
+.booking-header p {
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.booking-header h2 {
+  font-size: 28px;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.booking-header span {
+  color: #6b7280;
+}
+
+.booking-form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.booking-btn {
+  width: fit-content;
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.booking-btn:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 800px) {
+  .professional-profile {
+    padding: 30px 5%;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-image {
+    height: 350px;
+  }
+
+  .profile-info {
+    padding: 30px;
+  }
+
+  .profile-info h1 {
+    font-size: 32px;
+  }
+
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+}

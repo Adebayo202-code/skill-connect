@@ -1,0 +1,130 @@
+.professional-register-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #f8fafc;
+}
+
+.professional-register-card {
+  width: 100%;
+  max-width: 550px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.professional-register-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.professional-register-header h1 {
+  font-size: 30px;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.professional-register-header p {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.professional-register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  background: white;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+}
+
+.professional-register-btn {
+  margin-top: 5px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition: 0.3s ease;
+}
+
+.professional-register-btn:hover {
+  background: #1d4ed8;
+}
+
+.professional-register-footer {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.professional-register-footer p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.professional-register-footer a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+.register-error {
+  margin: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #dc2626;
+  font-size: 14px;
+}
+
+.professional-register-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .professional-register-card {
+    padding: 30px 20px;
+  }
+
+  .professional-register-header h1 {
+    font-size: 25px;
+  }
+}
