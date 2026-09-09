@@ -1,6 +1,6 @@
 
 const express = require("express");
-const Professional = require("../models/Professional");
+const Professional = require("../models/professional");
 
 const router = express.Router();
 
