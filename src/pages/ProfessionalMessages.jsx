@@ -1,11 +1,9 @@
-
 import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import app from "../firebase";
+import API_URL from "../api";
 import "./ProfessionalRequests.css";
-
-const API_URL = "http://localhost:2300";
 
 const ProfessionalMessages = () => {
   const auth = getAuth(app);
@@ -110,7 +108,7 @@ const ProfessionalMessages = () => {
     );
 
     return () => unsubscribe();
-  }, [navigate]);
+  }, [auth, navigate]);
 
   // =========================================
   // LOAD MESSAGES
@@ -170,6 +168,7 @@ const ProfessionalMessages = () => {
       }
     };
 
+    // First load
     loadMessages();
 
     // Refresh messages every 3 seconds
@@ -177,6 +176,7 @@ const ProfessionalMessages = () => {
       loadMessages();
     }, 3000);
 
+    // Stop refreshing when component is removed
     return () => clearInterval(interval);
   }, [user, selectedCustomer]);
 
@@ -649,4 +649,3 @@ const ProfessionalMessages = () => {
 };
 
 export default ProfessionalMessages;
-
