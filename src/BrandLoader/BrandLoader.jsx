@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import "./BrandLoader.css";
+import "./Brandloader.css";
 
 const BrandLoader = ({ children }) => {
   const location = useLocation();
