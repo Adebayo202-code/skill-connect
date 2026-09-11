@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import app from "../firebase";
+import API_URL from "../api";
 import "./ProfessionalProfileDashboard.css";
 
 const ProfessionalProfileDashboard = () => {
@@ -26,7 +27,7 @@ const ProfessionalProfileDashboard = () => {
 
         try {
           const userResponse = await fetch(
-            `http://localhost:2300/api/users/uid/${firebaseUser.uid}`
+            `${API_URL}/api/users/uid/${firebaseUser.uid}`
           );
 
           if (!userResponse.ok) {
@@ -43,7 +44,7 @@ const ProfessionalProfileDashboard = () => {
           setUser(userData);
 
           const professionalResponse = await fetch(
-            "http://localhost:2300/api/professionals"
+            `${API_URL}/api/professionals`
           );
 
           if (!professionalResponse.ok) {
@@ -115,7 +116,7 @@ const ProfessionalProfileDashboard = () => {
       formData.append("image", file);
 
       const uploadResponse = await fetch(
-        "http://localhost:2300/api/upload/image",
+        `${API_URL}/api/upload/image`,
         {
           method: "POST",
           body: formData,
@@ -134,7 +135,7 @@ const ProfessionalProfileDashboard = () => {
 
       // Save Cloudinary URL to MongoDB
       const updateResponse = await fetch(
-        `http://localhost:2300/api/users/uid/${user.uid}/profile-image`,
+        `${API_URL}/api/users/uid/${user.uid}/profile-image`,
         {
           method: "PATCH",
           headers: {

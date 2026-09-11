@@ -6,6 +6,7 @@ import {
   getAuth,
 } from "firebase/auth";
 import app from "../firebase";
+import API_URL from "../api";
 import "./CustomerRegister.css";
 
 const CustomerRegister = () => {
@@ -52,7 +53,7 @@ const CustomerRegister = () => {
 
       // Save customer in MongoDB through Node.js
       const response = await fetch(
-        "http://localhost:2300/api/users",
+        `${API_URL}/api/users`,
         {
           method: "POST",
           headers: {

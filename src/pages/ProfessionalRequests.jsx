@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import app from "../firebase";
+import API_URL from "../api";
 import "./ProfessionalRequests.css";
 
 const ProfessionalRequests = () => {
@@ -29,7 +30,7 @@ const ProfessionalRequests = () => {
         try {
           // Get professional from MongoDB
           const userResponse = await fetch(
-            `http://localhost:2300/api/users/uid/${firebaseUser.uid}`
+            `${API_URL}/api/users/uid/${firebaseUser.uid}`
           );
 
           const user = await userResponse.json();
@@ -49,7 +50,7 @@ const ProfessionalRequests = () => {
 
           // Get requests belonging to this professional
           const response = await fetch(
-            `http://localhost:2300/api/job-requests/professional/${user._id}`
+            `${API_URL}/api/job-requests/professional/${user._id}`
           );
 
           const data = await response.json();
@@ -93,7 +94,7 @@ const ProfessionalRequests = () => {
       setError("");
 
       const response = await fetch(
-        `http://localhost:2300/api/job-requests/${requestId}/status`,
+        `${API_URL}/api/job-requests/${requestId}/status`,
         {
           method: "PATCH",
           headers: {

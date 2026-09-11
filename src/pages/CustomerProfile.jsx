@@ -15,6 +15,7 @@ import {
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import app from "../firebase";
+import API_URL from "../api";
 import "./CustomerProfile.css";
 
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
@@ -67,7 +68,7 @@ const CustomerProfile = () => {
 
         try {
           const response = await fetch(
-            `http://localhost:2300/api/users/uid/${firebaseUser.uid}`
+            `${API_URL}/api/users/uid/${firebaseUser.uid}`
           );
 
           const data = await response.json();
@@ -122,7 +123,7 @@ const CustomerProfile = () => {
       formData.append("image", file);
 
       const uploadResponse = await fetch(
-        "http://localhost:2300/api/upload/image",
+        `${API_URL}/api/upload/image`,
         {
           method: "POST",
           body: formData,
@@ -138,7 +139,7 @@ const CustomerProfile = () => {
       }
 
       const response = await fetch(
-        `http://localhost:2300/api/users/uid/${user.uid}/profile-image`,
+        `${API_URL}/api/users/uid/${user.uid}/profile-image`,
         {
           method: "PATCH",
           headers: {
@@ -268,7 +269,7 @@ const CustomerProfile = () => {
       setSavingLocation(true);
 
       const response = await fetch(
-        `http://localhost:2300/api/users/uid/${user.uid}/location`,
+        `${API_URL}/api/users/uid/${user.uid}/location`,
         {
           method: "PATCH",
           headers: {

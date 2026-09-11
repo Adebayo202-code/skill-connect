@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import API_URL from "../api";
 import "./FindProfessionals.css";
 
 const FindProfessionals = () => {
@@ -21,7 +22,7 @@ const FindProfessionals = () => {
         setError("");
 
         const response = await fetch(
-          "http://localhost:2300/api/professionals"
+          `${API_URL}/api/professionals`
         );
 
         const data = await response.json();

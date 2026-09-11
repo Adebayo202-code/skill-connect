@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import app from "../firebase";
+import API_URL from "../api";
 import "./CustomerDashboard.css";
 
 const CustomerDashboard = () => {
@@ -25,7 +26,7 @@ const CustomerDashboard = () => {
         try {
           // Get customer from MongoDB
           const userResponse = await fetch(
-            `http://localhost:2300/api/users/uid/${firebaseUser.uid}`
+            `${API_URL}/api/users/uid/${firebaseUser.uid}`
           );
 
           const userData = await userResponse.json();
@@ -46,7 +47,7 @@ const CustomerDashboard = () => {
 
           // Get customer's job requests
           const requestResponse = await fetch(
-            `http://localhost:2300/api/job-requests/customer/${userData._id}`
+            `${API_URL}/api/job-requests/customer/${userData._id}`
           );
 
           const requestData = await requestResponse.json();

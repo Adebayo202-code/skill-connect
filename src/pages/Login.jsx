@@ -6,6 +6,7 @@ import {
   getAuth,
 } from "firebase/auth";
 import app from "../firebase";
+import API_URL from "../api";
 import "./Login.css";
 
 const Login = () => {
@@ -40,7 +41,7 @@ const Login = () => {
       console.log("Firebase user:", user);
 
       const response = await fetch(
-        `http://localhost:2300/api/users/uid/${user.uid}`
+        `${API_URL}/api/users/uid/${user.uid}`
       );
 
       const data = await response.json();

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import app from "../firebase";
+import API_URL from "../api";
 import "./ProfessionalDashboard.css";
 
 const ProfessionalDashboard = () => {
@@ -26,7 +27,7 @@ const ProfessionalDashboard = () => {
         try {
           // Get real user from MongoDB
           const userResponse = await fetch(
-            `http://localhost:2300/api/users/uid/${firebaseUser.uid}`
+            `${API_URL}/api/users/uid/${firebaseUser.uid}`
           );
 
           if (!userResponse.ok) {
@@ -45,7 +46,7 @@ const ProfessionalDashboard = () => {
 
           // Get real professional profile
           const professionalResponse = await fetch(
-            "http://localhost:2300/api/professionals"
+            `${API_URL}/api/professionals`
           );
 
           if (!professionalResponse.ok) {

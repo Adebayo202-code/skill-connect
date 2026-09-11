@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import app from "../firebase";
+import API_URL from "../api";
 import "./ProfessionalProfile.css";
 
 const ProfessionalProfile = () => {
@@ -29,7 +30,7 @@ const ProfessionalProfile = () => {
         setLoading(true);
 
         const response = await fetch(
-          `http://localhost:2300/api/professionals/${id}`
+          `${API_URL}/api/professionals/${id}`
         );
 
         const data = await response.json();
@@ -81,7 +82,7 @@ const ProfessionalProfile = () => {
 
         try {
           const response = await fetch(
-            `http://localhost:2300/api/users/uid/${firebaseUser.uid}`
+            `${API_URL}/api/users/uid/${firebaseUser.uid}`
           );
 
           const data = await response.json();
@@ -148,7 +149,7 @@ const ProfessionalProfile = () => {
       setSending(true);
 
       const response = await fetch(
-        "http://localhost:2300/api/job-requests",
+        `${API_URL}/api/job-requests`,
         {
           method: "POST",
           headers: {

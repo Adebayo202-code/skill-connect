@@ -6,6 +6,7 @@ import {
   getAuth,
 } from "firebase/auth";
 import app from "../firebase";
+import API_URL from "../api";
 import "./ProfessionalRegister.css";
 
 const ProfessionalRegister = () => {
@@ -141,7 +142,7 @@ const ProfessionalRegister = () => {
 
       // 2. Create the main user in MongoDB
       const userResponse = await fetch(
-        "http://localhost:2300/api/users",
+        `${API_URL}/api/users`,
         {
           method: "POST",
           headers: {
@@ -171,7 +172,7 @@ const ProfessionalRegister = () => {
 
       // 3. Create the professional profile in MongoDB
       const professionalResponse = await fetch(
-        "http://localhost:2300/api/professionals",
+        `${API_URL}/api/professionals`,
         {
           method: "POST",
           headers: {
